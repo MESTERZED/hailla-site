@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!--@include head-->
+    <title>Espace découverte — Patrimoine algérien — HAILLA</title>
+    <meta name="description" content="Les sept sites algériens inscrits au patrimoine mondial de l’UNESCO et les merveilles naturelles du pays : photos, récits audio, fiches pratiques." />
+  </head>
+  <body data-barba="wrapper">
+    <!--@include header-->
+
+    <main id="main" data-barba="container" data-barba-namespace="patrimoine" data-header="dark" data-lat="25.5000" data-lng="9.0000" data-place="Tassili n’Ajjer">
+      <section class="heritage-hero on-dark">
+        <img class="heritage-hero__bg" src="img/tassili-roches-1600.webp" alt="" fetchpriority="high" width="1600" height="1067" />
+        <div class="container heritage-hero__inner">
+          <p class="mono eyebrow eyebrow--light" data-i18n="nav.heritage">Patrimoine</p>
+          <h1 data-i18n="her.title">Espace découverte</h1>
+          <p class="lede lede--light" data-i18n="her.lede">Le patrimoine algérien en images et en récits : sept sites inscrits à l’UNESCO, et des merveilles naturelles à découvrir.</p>
+          <div class="row">
+            <button class="btn" type="button" data-tour>
+              <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15L19.5 12Z"/></svg>
+              <span data-i18n="her.tour">Visite immersive</span>
+            </button>
+            <p class="mono keep heritage-hero__count" data-her-count></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section heritage" aria-label="Sites">
+        <div class="container">
+          <div class="chips chips--scroll heritage__filters" data-era-chips role="group" aria-label="Époques"></div>
+          <div class="heritage__grid" data-heritage-grid></div>
+        </div>
+      </section>
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

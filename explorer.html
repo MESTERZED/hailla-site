@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!--@include head-->
+    <title>Hébergements — HAILLA</title>
+    <meta name="description" content="Hôtels, maisons d’hôtes, auberges et écolodges à Alger, Oran, Béjaïa, Tipaza et Tizi Ouzou. Filtres par budget, langues parlées et label Éco." />
+  </head>
+  <body data-barba="wrapper">
+    <!--@include header-->
+
+    <main id="main" data-barba="container" data-barba-namespace="explorer" data-lat="36.7509" data-lng="5.0567" data-place="Nord algérien">
+      <div class="container page-head">
+        <p class="mono eyebrow" data-i18n="nav.stays">Hébergements</p>
+        <h1 data-i18n="stays.title">Hébergements</h1>
+        <p class="lede" data-i18n="stays.lede">Hôtels, maisons d’hôtes, auberges et écolodges dans le Nord de l’Algérie.</p>
+      </div>
+
+      <div class="container explorer">
+        <aside class="filters" data-filters aria-labelledby="filters-title">
+          <div class="filters__head">
+            <h2 class="filters__title" id="filters-title" data-i18n="stays.filters">Filtres</h2>
+            <button class="filters__reset" type="button" data-reset data-i18n="stays.reset">Réinitialiser</button>
+          </div>
+          <form class="filters__form" data-filter-form>
+            <label class="field">
+              <span data-i18n="stays.city">Ville</span>
+              <select class="select" name="city" data-city-select><option value="" data-i18n="stays.allcities">Toutes les villes</option></select>
+            </label>
+            <fieldset class="field fieldset">
+              <legend class="label" data-i18n="stays.type">Type</legend>
+              <div class="chips" data-type-chips></div>
+            </fieldset>
+            <label class="field">
+              <span><span data-i18n="stays.budget">Budget max / nuit</span> · <output class="mono keep" data-budget-out></output></span>
+              <input type="range" name="budget" min="3000" max="20000" step="500" value="20000" />
+            </label>
+            <fieldset class="field fieldset">
+              <legend class="label" data-i18n="stays.rating">Note minimum</legend>
+              <div class="chips" data-rating-chips></div>
+            </fieldset>
+            <fieldset class="field fieldset">
+              <legend class="label" data-i18n="stays.langs">Langues parlées</legend>
+              <div class="chips" data-lang-chips></div>
+            </fieldset>
+            <label class="check"><input type="checkbox" name="eco" /><span data-i18n="stays.eco">Label Éco uniquement</span></label>
+            <button class="btn btn--block filters__apply" type="button" data-close-filters data-i18n="stays.apply">Voir les résultats</button>
+          </form>
+        </aside>
+
+        <section class="results" aria-labelledby="results-count">
+          <div class="results__bar">
+            <p class="results__count" id="results-count" aria-live="polite" data-count></p>
+            <div class="row">
+              <button class="btn btn--ghost btn--sm filters__toggle" type="button" data-open-filters>
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+                <span data-i18n="stays.filters">Filtres</span>
+              </button>
+              <label class="sort">
+                <span class="sr-only" data-i18n="stays.sort">Trier par</span>
+                <select class="select select--sm" data-sort>
+                  <option value="reco" data-i18n="stays.sort.reco">Recommandés</option>
+                  <option value="price" data-i18n="stays.sort.price">Prix croissant</option>
+                  <option value="rating" data-i18n="stays.sort.rating">Mieux notés</option>
+                  <option value="dist" data-i18n="stays.sort.dist">Distance</option>
+                </select>
+              </label>
+              <div class="seg" role="group" aria-label="Affichage">
+                <button type="button" data-view="list" aria-pressed="true" data-i18n="stays.list">Liste</button>
+                <button type="button" data-view="map" aria-pressed="false" data-i18n="stays.mapview">Carte</button>
+              </div>
+            </div>
+          </div>
+          <div class="results__grid" data-results></div>
+          <div class="results__map" data-results-map hidden></div>
+          <p class="demo-note mono" data-i18n="stays.demo">Catalogue de démonstration : établissements fictifs, sites et monuments réels.</p>
+        </section>
+      </div>
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

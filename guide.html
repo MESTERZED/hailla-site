@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!--@include head-->
+    <title>Guide IA — HAILLA</title>
+    <meta name="description" content="Un guide touristique intelligent, disponible 24 h/24 en français, arabe et anglais : itinéraires, adresses, horaires, transports et phrases utiles." />
+  </head>
+  <body data-barba="wrapper">
+    <!--@include header-->
+
+    <main id="main" data-barba="container" data-barba-namespace="guide" data-lat="36.7509" data-lng="5.0567" data-place="Béjaïa">
+      <div class="container page-head page-head--tight">
+        <p class="mono eyebrow" data-i18n="nav.guide">Guide IA</p>
+        <h1 data-i18n="guide.title">Guide IA</h1>
+        <p class="lede" data-i18n="guide.lede">Un guide local qui répond à toute heure : itinéraires, adresses, horaires, transports, phrases utiles.</p>
+      </div>
+      <div class="container guide">
+        <section class="guide__chat" aria-label="Conversation" data-guide-chat></section>
+        <aside class="guide__side">
+          <form class="planner" data-planner>
+            <h2 class="planner__title" data-i18n="guide.plan">Planificateur</h2>
+            <label class="field"><span data-i18n="guide.plan.city">Ville</span><select class="select" name="city" data-city-select data-phase1></select></label>
+            <label class="field"><span data-i18n="guide.plan.days">Jours</span>
+              <select class="select" name="days"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select>
+            </label>
+            <button class="btn btn--azur btn--block" type="submit" data-i18n="guide.plan.go">Générer l’itinéraire</button>
+          </form>
+          <div class="pass">
+            <p class="mono keep pass__tag">PASS</p>
+            <h2 class="pass__title" data-i18n="guide.premium">Pass Guide IA — 1 350 DA</h2>
+            <p data-i18n="guide.premium.p">Itinéraires illimités, mode hors ligne et récits audio sur tous les sites.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

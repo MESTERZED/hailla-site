@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!--@include head-->
+    <title>Prestataires & institutions — HAILLA</title>
+    <meta name="description" content="Inscrivez votre hôtel, maison d’hôtes ou agence gratuitement. Commission de 10 % sur les réservations confirmées. Tableau de bord pour les offices de tourisme." />
+  </head>
+  <body data-barba="wrapper">
+    <!--@include header-->
+
+    <main id="main" data-barba="container" data-barba-namespace="pro" data-lat="35.6971" data-lng="-0.6308" data-place="Oran">
+      <div class="container page-head">
+        <p class="mono eyebrow" data-i18n="nav.pro">Prestataires</p>
+        <h1 data-i18n="pro.title">Prestataires & institutions</h1>
+        <p class="lede" data-i18n="pro.lede">Rendez votre établissement visible auprès des voyageurs algériens et étrangers, sans frais d’entrée.</p>
+      </div>
+
+      <section class="container plans" aria-label="Formules">
+        <article class="plan" data-reveal>
+          <h2 class="plan__name" data-i18n="pro.free">Découverte</h2>
+          <p class="plan__price" data-i18n="pro.free.price">Gratuit</p>
+          <p class="plan__desc" data-i18n="pro.free.p">Fiche établissement, photos, avis clients, réservations.</p>
+          <ul class="plan__list" role="list">
+            <li data-i18n="pro.f1">Fiche multilingue FR / AR / EN</li>
+            <li data-i18n="pro.f2">Calendrier de disponibilités</li>
+          </ul>
+        </article>
+        <article class="plan plan--main" data-reveal>
+          <h2 class="plan__name" data-i18n="pro.com">Commission</h2>
+          <p class="plan__price plan__price--big" data-i18n="pro.com.price">10 %</p>
+          <p class="plan__desc" data-i18n="pro.com.p">Sur chaque réservation confirmée uniquement. Aucune réservation, aucun frais.</p>
+          <ul class="plan__list" role="list">
+            <li data-i18n="pro.f1">Fiche multilingue FR / AR / EN</li>
+            <li data-i18n="pro.f2">Calendrier de disponibilités</li>
+            <li data-i18n="pro.f3">Recommandé par le guide IA</li>
+            <li data-i18n="pro.f5">Badge Éco après audit</li>
+          </ul>
+          <a class="btn btn--block" href="#inscription" data-i18n="home.pro.cta">Devenir partenaire</a>
+        </article>
+        <article class="plan" data-reveal>
+          <h2 class="plan__name" data-i18n="pro.sub">Pro</h2>
+          <p class="plan__price" data-i18n="pro.sub.price">Sur devis</p>
+          <p class="plan__desc" data-i18n="pro.sub.p">Abonnement mensuel : mise en avant, statistiques détaillées, accompagnement personnalisé.</p>
+          <ul class="plan__list" role="list">
+            <li data-i18n="pro.f3">Recommandé par le guide IA</li>
+            <li data-i18n="pro.f4">Tableau de bord et statistiques</li>
+            <li data-i18n="pro.f6">Interlocuteur dédié</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section container pro-split" id="inscription" aria-labelledby="pro-form-title">
+        <form class="pro-form" data-pro-form novalidate>
+          <h2 id="pro-form-title" data-i18n="pro.form.t">Inscrire mon établissement</h2>
+          <div class="pro-form__grid">
+            <label class="field"><span data-i18n="pro.form.name">Nom de l’établissement</span><input class="input" name="name" autocomplete="organization" /></label>
+            <label class="field"><span data-i18n="pro.form.type">Type</span><select class="select" name="type" data-type-select></select></label>
+            <label class="field"><span data-i18n="pro.form.city">Ville</span><select class="select" name="city" data-city-select data-phase1></select></label>
+            <label class="field"><span data-i18n="pro.form.contact">Votre nom</span><input class="input" name="contact" autocomplete="name" /></label>
+            <label class="field"><span data-i18n="pro.form.phone">Téléphone</span><input class="input" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="05 XX XX XX XX" /></label>
+            <label class="field"><span data-i18n="pro.form.email">E-mail</span><input class="input" name="email" type="email" autocomplete="email" /></label>
+            <label class="field pro-form__full"><span data-i18n="pro.form.msg">Message (facultatif)</span><textarea class="textarea" name="msg" rows="3"></textarea></label>
+          </div>
+          <p class="field-error" data-form-error role="alert" hidden></p>
+          <button class="btn btn--azur" type="submit" data-i18n="pro.form.send">Envoyer la demande</button>
+        </form>
+      </section>
+
+      <section class="section dash-section on-dark" aria-labelledby="dash-title">
+        <div class="container">
+          <div class="section-head section-head--row">
+            <div class="stack">
+              <p class="mono eyebrow eyebrow--light" data-i18n="pro.dash.demo">Données de démonstration</p>
+              <h2 id="dash-title" data-i18n="pro.dash.t">Tableau de bord institutions</h2>
+              <p class="lede lede--light" data-i18n="pro.dash.p">Pour les offices de tourisme et le ministère : statistiques anonymisées sur les flux et les destinations recherchées.</p>
+            </div>
+          </div>
+          <div class="dash" data-dash></div>
+        </div>
+      </section>
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

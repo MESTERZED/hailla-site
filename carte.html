@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!--@include head-->
+    <title>Carte interactive — HAILLA</title>
+    <meta name="description" content="Cafés, hôtels, musées, plages, souvenirs et sites patrimoniaux autour de vous, en Algérie." />
+  </head>
+  <body data-barba="wrapper">
+    <!--@include header-->
+
+    <main id="main" data-barba="container" data-barba-namespace="carte" data-lat="36.5897" data-lng="2.4475" data-place="Tipaza">
+      <h1 class="sr-only" data-i18n="map.title">Carte</h1>
+      <div class="mapview">
+        <div class="mapview__map" data-map role="region" aria-label="Carte"></div>
+        <div class="mapview__top">
+          <label class="mapview__search">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span class="sr-only" data-i18n="map.search">Rechercher un lieu</span>
+            <input type="search" data-map-search data-i18n-ph="map.search" placeholder="Rechercher un lieu" autocomplete="off" />
+          </label>
+          <div class="chips chips--scroll" data-map-cats role="group" aria-label="Catégories"></div>
+          <div class="chips chips--scroll mapview__cities" data-map-cities role="group" aria-label="Villes"></div>
+        </div>
+        <button class="mapview__locate icon-btn" type="button" data-locate data-i18n-aria="map.locate" aria-label="Me localiser">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8Z"/></svg>
+        </button>
+        <div class="mapview__cards" data-map-cards aria-live="polite"></div>
+      </div>
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

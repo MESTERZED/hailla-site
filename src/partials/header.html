@@ -1,0 +1,67 @@
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Aller au contenu</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="./" aria-label="HAILLA">
+        <span class="brand__mark"><img src="brand/mark.svg" alt="" width="15" height="19" class="invert" /></span>
+        <span>HAILLA</span>
+      </a>
+      <nav class="nav" aria-label="Navigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="./" data-nav="home" data-i18n="nav.home">Accueil</a></li>
+          <li><a class="nav__link" href="explorer.html" data-nav="explorer" data-i18n="nav.stays">Hébergements</a></li>
+          <li><a class="nav__link" href="carte.html" data-nav="carte" data-i18n="nav.map">Carte</a></li>
+          <li><a class="nav__link" href="patrimoine.html" data-nav="patrimoine" data-i18n="nav.heritage">Patrimoine</a></li>
+          <li><a class="nav__link" href="guide.html" data-nav="guide" data-i18n="nav.guide">Guide IA</a></li>
+          <li><a class="nav__link" href="pro.html" data-nav="pro" data-i18n="nav.pro">Prestataires</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" data-i18n-aria="nav.lang" aria-label="Langue">
+          <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="ar" lang="ar" aria-pressed="false">ع</button>
+        </div>
+        <a class="header-icon" href="voyages.html" data-nav="voyages" data-i18n-aria="nav.trips" aria-label="Mes voyages" data-trips-icon>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="13" rx="2.5"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3.5 12.5h17"/></svg>
+        </a>
+        <a class="header-icon" href="compte.html" data-nav="compte" data-i18n-aria="nav.account" aria-label="Mon compte">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        </a>
+        <a class="btn btn--sm header-cta" href="explorer.html" data-i18n="place.reserve">Réserver</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="menu" data-burger data-i18n-aria="nav.menu" aria-label="Menu">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="menu" id="menu" data-menu aria-hidden="true">
+      <div class="menu__top">
+        <a class="brand" href="./"><span class="brand__mark"><img src="brand/mark.svg" alt="" width="15" height="19" class="invert" /></span><span>HAILLA</span></a>
+        <button class="burger burger--light" type="button" data-menu-close data-i18n-aria="nav.close" aria-label="Fermer">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <ul class="menu__list">
+        <li><a href="./" data-nav="home"><span data-i18n="nav.home">Accueil</span><span class="mono keep">36.75° N</span></a></li>
+        <li><a href="explorer.html" data-nav="explorer"><span data-i18n="nav.stays">Hébergements</span><span class="mono keep">15</span></a></li>
+        <li><a href="carte.html" data-nav="carte"><span data-i18n="nav.map">Carte</span><span class="mono keep">26</span></a></li>
+        <li><a href="patrimoine.html" data-nav="patrimoine"><span data-i18n="nav.heritage">Patrimoine</span><span class="mono keep">UNESCO ×7</span></a></li>
+        <li><a href="guide.html" data-nav="guide"><span data-i18n="nav.guide">Guide IA</span><span class="mono keep">24/7</span></a></li>
+        <li><a href="voyages.html" data-nav="voyages"><span data-i18n="nav.trips">Mes voyages</span></a></li>
+        <li><a href="pro.html" data-nav="pro"><span data-i18n="nav.pro">Prestataires</span></a></li>
+      </ul>
+      <div class="menu__foot">
+        <div class="lang-switch" role="group" aria-label="Langue">
+          <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="ar" lang="ar" aria-pressed="false">ع</button>
+        </div>
+        <a class="btn" href="compte.html" data-i18n="nav.account">Mon compte</a>
+      </div>
+    </div>
+
+    <p class="lat-rail" data-lat-rail aria-hidden="true"><b data-lat-coord>36.7538° N · 3.0588° E</b><span data-lat-place>Alger</span></p>
+
+    <div class="curtain" aria-hidden="true" data-curtain>
+      <img class="curtain__mark invert" src="brand/mark.svg" alt="" />
+      <span class="curtain__label" data-curtain-label></span>
+    </div>

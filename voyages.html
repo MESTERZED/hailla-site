@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!--@include head-->
+    <title>Mes voyages — HAILLA</title>
+    <meta name="description" content="Vos réservations, vos favoris et vos avis HAILLA." />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body data-barba="wrapper">
+    <!--@include header-->
+
+    <main id="main" data-barba="container" data-barba-namespace="voyages" data-lat="36.7538" data-lng="3.0588" data-place="Alger">
+      <div class="container page-head">
+        <p class="mono eyebrow" data-i18n="nav.trips">Mes voyages</p>
+        <h1 data-i18n="trips.title">Mes voyages</h1>
+      </div>
+      <div class="container trips">
+        <div class="tabs" role="tablist" data-trip-tabs>
+          <button role="tab" type="button" id="tab-up" aria-controls="panel-up" aria-selected="true" data-tab="up"><span data-i18n="trips.upcoming">À venir</span> <span class="tabs__n" data-n="up"></span></button>
+          <button role="tab" type="button" id="tab-past" aria-controls="panel-past" aria-selected="false" tabindex="-1" data-tab="past"><span data-i18n="trips.past">Passés</span> <span class="tabs__n" data-n="past"></span></button>
+          <button role="tab" type="button" id="tab-favs" aria-controls="panel-favs" aria-selected="false" tabindex="-1" data-tab="favs"><span data-i18n="trips.favs">Favoris</span> <span class="tabs__n" data-n="favs"></span></button>
+        </div>
+        <div role="tabpanel" id="panel-up" aria-labelledby="tab-up" data-panel="up" tabindex="0"></div>
+        <div role="tabpanel" id="panel-past" aria-labelledby="tab-past" data-panel="past" tabindex="0" hidden></div>
+        <div role="tabpanel" id="panel-favs" aria-labelledby="tab-favs" data-panel="favs" tabindex="0" hidden></div>
+      </div>
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>
