@@ -36,7 +36,7 @@ const fmt = (n) => new Intl.NumberFormat('fr-FR').format(n).replace(/ | /g, '
 
 const T = (l, fr, en, ar) => ({ fr, en, ar })[l];
 
-const DISHES = {
+export const DISHES = {
   alger: { fr: 'chorba frik, rechta, mhadjeb et zlabia', en: 'chorba frik, rechta, mhadjeb and zlabia', ar: 'شوربة فريك، رشتة، محاجب وزلابية' },
   oran: { fr: 'karantika, sardines grillées et loubia', en: 'karantika, grilled sardines and loubia', ar: 'كرنتيكة، سردين مشوي ولوبيا' },
   bejaia: { fr: 'couscous kabyle, aghroum (galette) et figues sèches', en: 'Kabyle couscous, aghroum flatbread and dried figs', ar: 'كسكس قبائلي، أغروم (كسرة) وتين مجفف' },
@@ -44,7 +44,7 @@ const DISHES = {
   tizi: { fr: 'couscous aux légumes, huile d’olive de Kabylie et galette au feu de bois', en: 'vegetable couscous, Kabyle olive oil and wood-fired flatbread', ar: 'كسكس بالخضر، زيت زيتون القبائل وكسرة على الحطب' },
 };
 
-const DAY_TRIPS = {
+export const DAY_TRIPS = {
   alger: { fr: 'Excursion à Tipaza (1 h 15) : ruines romaines et Mausolée royal', en: 'Day trip to Tipaza (1 h 15): Roman ruins and the Royal Mausoleum', ar: 'رحلة إلى تيبازة (ساعة و15 د): آثار رومانية والضريح الملكي' },
   tipaza: { fr: 'Cherchell et son musée de mosaïques, à 30 minutes', en: 'Cherchell and its mosaic museum, 30 minutes away', ar: 'شرشال ومتحف الفسيفساء، على بعد 30 دقيقة' },
   bejaia: { fr: 'Corniche jusqu’aux plages de Tichy et d’Aokas', en: 'Coastal road to the beaches of Tichy and Aokas', ar: 'الطريق الساحلي نحو شواطئ تيشي وأوقاس' },

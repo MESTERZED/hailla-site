@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-const pages = ['index', 'explorer', 'lieu', 'carte', 'patrimoine', 'guide', 'voyages', 'compte', 'pro', 'a-propos'];
+const pages = ['index', 'explorer', 'lieu', 'carte', 'patrimoine', 'guide', 'voyages', 'compte', 'pro', 'a-propos', 'experiences'];
 
 // <!--@include header--> → src/partials/header.html (header/footer shared by all pages, kept static for SEO)
 const includePartials = () => ({

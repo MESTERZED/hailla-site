@@ -1,12 +1,10 @@
 import { t } from '../core/i18n.js';
 import { icon, toast } from '../core/ui.js';
-import { user, bookings, favs } from '../core/store.js';
+import { user } from '../core/store.js';
 import { esc } from '../core/format.js';
 import { syncShell } from '../core/shell.js';
+import { profileHtml, bindProfile } from './profile.js';
 
-const INTERESTS = ['beach', 'heritage', 'mountain', 'food', 'desert', 'eco'];
-const TRAVEL = ['solo', 'couple', 'family', 'group'];
-const BUDGET = ['low', 'mid', 'high'];
 
 export function init(root) {
   const host = root.querySelector('[data-account]');
@@ -47,43 +45,11 @@ export function init(root) {
 
   const field = (name, label, type, ac) => `<label class="field"><span class="sr-only">${label}</span><input class="input" name="${name}" type="${type}" placeholder="${label}" autocomplete="${ac}" ${type === 'tel' ? 'inputmode="tel"' : ''} /></label>`;
 
-  const profileView = (u) => {
-    const prefs = user.prefs();
-    const chip = (group, value, label, on, multi) => `<button type="button" class="chip" data-${group}="${value}" aria-pressed="${on}" ${multi ? '' : 'role="radio" aria-checked="' + on + '"'}>${esc(label)}</button>`;
-    return `
-      <div class="container page-head profile-head">
-        <div class="profile-id">
-          <span class="avatar avatar--xl" aria-hidden="true">${esc(u.name[0] || 'H')}</span>
-          <div>
-            <p class="mono eyebrow">${t('nav.account')}</p>
-            <h1>${t('acc.hello', { n: esc(u.name.split(' ')[0]) })}</h1>
-            <p class="muted">${esc(u.email || '')}${u.phone ? ` · ${esc(u.phone)}` : ''}</p>
-          </div>
-        </div>
-        <div class="profile-stats">
-          <a href="voyages.html"><strong class="display">${bookings.all().filter((b) => b.status === 'ok').length}</strong><span>${t('nav.trips')}</span></a>
-          <a href="voyages.html#favoris"><strong class="display">${favs.all().length}</strong><span>${t('trips.favs')}</span></a>
-        </div>
-      </div>
-      <form class="container prefs" data-prefs>
-        <h2>${t('acc.prefs')}</h2>
-        <p class="muted">${t('acc.prefs.p')}</p>
-        <fieldset class="prefs__group"><legend>${t('acc.budget')}</legend><div class="chips" role="radiogroup">${BUDGET.map((b) => chip('budget', b, t(`bud.${b}`), prefs.budget === b)).join('')}</div></fieldset>
-        <fieldset class="prefs__group"><legend>${t('acc.interests')}</legend><div class="chips">${INTERESTS.map((i) => chip('interest', i, t(`int.${i}`), prefs.interests.includes(i), true)).join('')}</div></fieldset>
-        <fieldset class="prefs__group"><legend>${t('acc.travel')}</legend><div class="chips" role="radiogroup">${TRAVEL.map((x) => chip('travel', x, t(`trav.${x}`), prefs.travel === x)).join('')}</div></fieldset>
-        <div class="row">
-          <button class="btn btn--azur" type="submit">${t('acc.save')}</button>
-          <button class="btn btn--ghost" type="button" data-logout>${t('acc.logout')}</button>
-        </div>
-        <p class="auth__demo">${t('acc.demo')}</p>
-      </form>`;
-  };
-
   let mounted = false;
   const render = () => {
     const u = user.get();
     root.dataset.header = u ? 'light' : 'dark';
-    host.innerHTML = u ? profileView(u) : authView();
+    host.innerHTML = u ? profileHtml(u) : authView();
     host.classList.toggle('account--auth', !u);
     if (mounted) syncShell(root);
     mounted = true;
@@ -95,31 +61,13 @@ export function init(root) {
     if (soon) toast(soon.dataset.soon === 'mdp' ? t('acc.demo') : t('acc.soon', { p: soon.dataset.soon }));
     const peek = e.target.closest('[data-peek]');
     if (peek) { const inp = peek.previousElementSibling; const show = inp.type === 'password'; inp.type = show ? 'text' : 'password'; peek.setAttribute('aria-pressed', String(show)); }
-    if (e.target.closest('[data-logout]')) { user.clear(); render(); }
-
-    const prefs = host.querySelector('[data-prefs]');
-    if (prefs) {
-      const b = e.target.closest('[data-budget],[data-travel],[data-interest]');
-      if (b) {
-        const group = b.dataset.budget ? 'budget' : b.dataset.travel ? 'travel' : 'interest';
-        if (group === 'interest') b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));
-        else prefs.querySelectorAll(`[data-${group}]`).forEach((x) => { const on = x === b; x.setAttribute('aria-pressed', String(on)); x.setAttribute('aria-checked', String(on)); });
-      }
-    }
   });
+  bindProfile(host, () => render());
 
   host.addEventListener('submit', (e) => {
     e.preventDefault();
     const f = e.target;
-    if (f.matches('[data-prefs]')) {
-      user.setPrefs({
-        budget: f.querySelector('[data-budget][aria-pressed="true"]')?.dataset.budget || 'mid',
-        travel: f.querySelector('[data-travel][aria-pressed="true"]')?.dataset.travel || 'couple',
-        interests: [...f.querySelectorAll('[data-interest][aria-pressed="true"]')].map((x) => x.dataset.interest),
-      });
-      toast(t('acc.saved'), { tone: 'ok' });
-      return;
-    }
+    if (!f.matches('[data-auth]')) return;
     // Sign in / sign up (prototype: stored locally, no password kept)
     const err = f.querySelector('[data-err]');
     const bad = [];

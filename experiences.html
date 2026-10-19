@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <!--@include head-->
+    <title>Expériences — guides locaux et événements — HAILLA</title>
+    <meta name="description" content="Guides locaux agréés, visites en vedette et événements à venir en Algérie : Alger, Oran, Béjaïa, Tipaza, Tizi Ouzou." />
+  </head>
+  <body data-barba="wrapper">
+    <!--@include header-->
+
+    <main id="main" data-barba="container" data-barba-namespace="experiences" data-lat="36.7856" data-lng="3.0607" data-place="Casbah d’Alger">
+      <div class="container page-head">
+        <p class="mono eyebrow" data-i18n="xp.eyebrow">Expériences</p>
+        <h1 data-i18n="xp.title">Vivre l’Algérie avec ceux qui la connaissent</h1>
+        <p class="lede" data-i18n="xp.lede">Des guides locaux, des visites prêtes à réserver et les événements de la semaine.</p>
+        <div class="chips chips--scroll" data-xp-cities role="group" data-i18n-aria="stays.city" aria-label="Ville"></div>
+      </div>
+
+      <section class="container xp-section" aria-labelledby="xp-tours">
+        <div class="xp-head"><h2 id="xp-tours" class="xp-title" data-i18n="xp.tours">Expériences en vedette</h2></div>
+        <div class="xp-rail" data-tours data-lenis-prevent></div>
+      </section>
+
+      <section class="container xp-section" aria-labelledby="xp-guides">
+        <div class="xp-head xp-head--app">
+          <div><p class="xp-kicker" data-i18n="xp.guidesIn">Guides locaux en</p><h2 id="xp-guides" class="xp-title" data-i18n="xp.algeria">Algérie</h2></div>
+          <span class="filter-btn filter-btn--static" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+        </div>
+        <div class="guide-grid" data-guides></div>
+      </section>
+
+      <section class="container xp-section" aria-labelledby="xp-events">
+        <div class="xp-head xp-head--app">
+          <div><p class="xp-kicker" data-i18n="xp.eventsIn">Événements à venir en</p><h2 id="xp-events" class="xp-title" data-i18n="xp.algeria">Algérie</h2></div>
+        </div>
+        <div class="event-grid" data-events></div>
+        <p class="demo-note mono" data-i18n="xp.demo">Guides et événements de démonstration (fictifs).</p>
+      </section>
+    </main>
+
+    <!--@include footer-->
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <!--@include head-->
     <title>Hébergements — HAILLA</title>
-    <meta name="description" content="Hôtels, maisons d’hôtes, auberges et écolodges à Alger, Oran, Béjaïa, Tipaza et Tizi Ouzou. Filtres par budget, langues parlées et label Éco." />
+    <meta name="description" content="Hôtels, maisons d’hôtes, auberges et écolodges à Alger, Oran, Béjaïa, Tipaza et Tizi Ouzou. Filtres par prix, note, langues parlées et label Éco ; vols intérieurs." />
   </head>
   <body data-barba="wrapper">
     <!--@include header-->
@@ -13,37 +13,51 @@
         <p class="mono eyebrow" data-i18n="nav.stays">Hébergements</p>
         <h1 data-i18n="stays.title">Hébergements</h1>
         <p class="lede" data-i18n="stays.lede">Hôtels, maisons d’hôtes, auberges et écolodges dans le Nord de l’Algérie.</p>
+        <div class="incl" role="tablist" data-i18n-aria="ex.included" aria-label="Inclus" data-tabs>
+          <button role="tab" type="button" class="incl__tab" data-tab="all" aria-selected="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 10h6M9 14h4"/></svg><span data-i18n="ex.all">Tout</span></button>
+          <button role="tab" type="button" class="incl__tab" data-tab="flights" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 13.5 3 11l1.5-1.5 7.5.5 4-4.5c.8-.8 2.2-.8 2.5-.5.3.3.3 1.7-.5 2.5l-4.5 4 .5 7.5L12.5 21 10 13.5"/></svg><span data-i18n="ex.flights">Vols</span></button>
+          <button role="tab" type="button" class="incl__tab" data-tab="hotels" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 20V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v15M14 10h5a1 1 0 0 1 1 1v9M2.5 20h19M7.5 8h3M7.5 12h3M7.5 16h3"/></svg><span data-i18n="ex.hotels">Hôtels</span></button>
+        </div>
       </div>
 
-      <div class="container explorer">
+      <div class="container explorer" data-panel="hotels">
         <aside class="filters" data-filters aria-labelledby="filters-title">
           <div class="filters__head">
-            <h2 class="filters__title" id="filters-title" data-i18n="stays.filters">Filtres</h2>
-            <button class="filters__reset" type="button" data-reset data-i18n="stays.reset">Réinitialiser</button>
+            <button class="icon-btn filters__close" type="button" data-close-filters data-i18n-aria="common.close" aria-label="Fermer"><svg class="ico flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+            <h2 class="filters__title" id="filters-title" data-i18n="ex.filter">Filtre</h2>
+            <span></span>
           </div>
           <form class="filters__form" data-filter-form>
-            <label class="field">
-              <span data-i18n="stays.city">Ville</span>
+            <fieldset class="fgroup">
+              <legend class="fgroup__title" data-i18n="ex.range">Fourchette de prix</legend>
+              <div class="drange">
+                <div class="drange__track"><span class="drange__fill" data-fill></span></div>
+                <input type="range" name="min" min="3000" max="20000" step="500" value="3000" data-i18n-aria="ex.min" aria-label="Prix minimum" />
+                <input type="range" name="max" min="3000" max="20000" step="500" value="20000" data-i18n-aria="ex.max" aria-label="Prix maximum" />
+              </div>
+              <div class="drange__labels"><output data-out-min></output><output data-out-max></output></div>
+            </fieldset>
+            <fieldset class="fgroup">
+              <legend class="fgroup__title" data-i18n="ex.stars">Note des voyageurs</legend>
+              <div class="starlist" data-stars></div>
+            </fieldset>
+            <label class="field fgroup">
+              <span class="fgroup__title" data-i18n="stays.city">Ville</span>
               <select class="select" name="city" data-city-select><option value="" data-i18n="stays.allcities">Toutes les villes</option></select>
             </label>
-            <fieldset class="field fieldset">
-              <legend class="label" data-i18n="stays.type">Type</legend>
+            <fieldset class="fgroup">
+              <legend class="fgroup__title" data-i18n="stays.type">Type</legend>
               <div class="chips" data-type-chips></div>
             </fieldset>
-            <label class="field">
-              <span><span data-i18n="stays.budget">Budget max / nuit</span> · <output class="mono keep" data-budget-out></output></span>
-              <input type="range" name="budget" min="3000" max="20000" step="500" value="20000" />
-            </label>
-            <fieldset class="field fieldset">
-              <legend class="label" data-i18n="stays.rating">Note minimum</legend>
-              <div class="chips" data-rating-chips></div>
-            </fieldset>
-            <fieldset class="field fieldset">
-              <legend class="label" data-i18n="stays.langs">Langues parlées</legend>
+            <fieldset class="fgroup">
+              <legend class="fgroup__title" data-i18n="stays.langs">Langues parlées</legend>
               <div class="chips" data-lang-chips></div>
             </fieldset>
             <label class="check"><input type="checkbox" name="eco" /><span data-i18n="stays.eco">Label Éco uniquement</span></label>
-            <button class="btn btn--block filters__apply" type="button" data-close-filters data-i18n="stays.apply">Voir les résultats</button>
+            <div class="filters__actions">
+              <button class="btn btn--ghost" type="button" data-reset data-i18n="ex.clear">Tout effacer</button>
+              <button class="btn btn--blue" type="button" data-apply data-i18n="ex.apply">Appliquer</button>
+            </div>
           </form>
         </aside>
 
@@ -51,9 +65,8 @@
           <div class="results__bar">
             <p class="results__count" id="results-count" aria-live="polite" data-count></p>
             <div class="row">
-              <button class="btn btn--ghost btn--sm filters__toggle" type="button" data-open-filters>
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
-                <span data-i18n="stays.filters">Filtres</span>
+              <button class="filter-btn filters__toggle" type="button" data-open-filters data-i18n-aria="ex.filter" aria-label="Filtre">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
               </button>
               <label class="sort">
                 <span class="sr-only" data-i18n="stays.sort">Trier par</span>
@@ -70,11 +83,25 @@
               </div>
             </div>
           </div>
-          <div class="results__grid" data-results></div>
+          <div class="hotel-grid" data-results></div>
           <div class="results__map" data-results-map hidden></div>
           <p class="demo-note mono" data-i18n="stays.demo">Catalogue de démonstration : établissements fictifs, sites et monuments réels.</p>
         </section>
       </div>
+
+      <section class="container flights" data-panel="flights" aria-labelledby="flights-title">
+        <div class="flights__head">
+          <h2 id="flights-title" class="flights__title" data-i18n="ex.selectFlight">Choisir un vol</h2>
+          <form class="flight-search" data-flight-form>
+            <label class="field"><span data-i18n="ex.from">Départ</span><select class="select" name="from" data-from></select></label>
+            <button class="icon-btn flight-search__swap" type="button" data-swap data-i18n-aria="ex.swap" aria-label="Inverser"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg></button>
+            <label class="field"><span data-i18n="ex.to">Arrivée</span><select class="select" name="to" data-to></select></label>
+          </form>
+          <div class="chips chips--scroll" data-flight-sort role="group" aria-label="Tri"></div>
+        </div>
+        <div class="flight-list" data-flights></div>
+        <p class="demo-note mono" data-i18n="ex.flightsDemo">Horaires et prix indicatifs (démonstration). La réservation de vols arrive bientôt dans HAILLA.</p>
+      </section>
     </main>
 
     <!--@include footer-->

@@ -1,4 +1,5 @@
 import { store } from './store.js';
+import { EXTRA } from './i18n-extra.js';
 
 // Interface strings. Content strings (places, heritage) carry their own {fr,en,ar} objects.
 const DICT = {
@@ -300,6 +301,8 @@ const DICT = {
     'home.m.guide.demo': 'اليوم 1 — المدينة القديمة وقورايا · اليوم 2 — رأس كاربون · اليوم 3 — أوقاس', 'common.email.bad': 'بريد إلكتروني غير صالح',
   },
 };
+
+for (const lang of Object.keys(EXTRA)) Object.assign(DICT[lang], EXTRA[lang]);
 
 export const LANGS = ['fr', 'en', 'ar'];
 const listeners = new Set();

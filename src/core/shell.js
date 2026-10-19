@@ -67,6 +67,13 @@ export function syncShell(container) {
     else a.removeAttribute('aria-current');
   });
 
+  // Mobile tab bar (app design)
+  const fav = ns === 'voyages' && location.hash === '#favoris';
+  $$('[data-tabbar]').forEach((a) => {
+    const on = (a.dataset.tabbar === 'favs' && fav) || (a.dataset.tabbar === ns && !(ns === 'voyages' && fav));
+    on ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current');
+  });
+
   // Latitude rail shows where this page "is".
   const lat = Number(container.dataset.lat), lng = Number(container.dataset.lng);
   if (!Number.isNaN(lat)) $('[data-lat-coord]').textContent = coord(lat, lng);

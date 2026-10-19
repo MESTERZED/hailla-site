@@ -16,9 +16,8 @@
 ## Design System
 - **Preset:** sur-mesure (aucun preset Stitch — Stitch MCP non disponible)
 - **Couleurs:** lagune #4ECDC4 · azur #2F6BF2 · abysse #0A1A3F (encre) · chaux #F4F7FB (fond) · soleil #FFD700 (CTA, texte abysse) · sable #E8C48A (Sud)
-- **Display:** Unbounded 500/600, tracking serré — Latin uniquement
-- **Body:** Readex Pro 300–600 (Latin + arabe, sert aussi les titres en mode AR)
-- **Labels:** Reem Kufi 400–700 — coufique géométrique (Latin + arabe) pour étiquettes, coordonnées, prix
+- **Titres & boutons:** Plus Jakarta Sans 700/800
+- **Texte:** Poppins 300–700 (aucune autre police — exigence client ; l'arabe retombe sur la police système)
 - **Radius:** arcs de la Casbah (999px 999px R R) pour les images; 16–24px pour les surfaces; pilules pour les contrôles
 - **Spacing:** base 8px, échelle fluide clamp()
 
@@ -41,5 +40,6 @@
 - Responsive 375 → 1440, focus visibles, prefers-reduced-motion respecté
 
 ## Changelog
+- v3 (retour client) : seules Plus Jakarta Sans + Poppins ; écrans hors accueil alignés sur les maquettes Figma de l'app (hôtels, filtre, vols, réservation en étapes, planificateur, traducteur, guides locaux, événements, profil, réglages, barre d'onglets mobile).
 - v2 (retour client) : Martian Mono remplacée par Reem Kufi (jugée générique) ; hero : vagues → morphing vers les monuments algériens ; Maqam Echahid remodélisé (palmes galbées, anneau, statues).
 - v1 : contrat initial dérivé des maquettes de l'app, du business plan et de la mémoire projet.

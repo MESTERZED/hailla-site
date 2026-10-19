@@ -8,6 +8,26 @@ const P = {
   search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
   heart: '<path d="M12 20s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 10c0 5.65-7 10-7 10Z"/>',
   star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/>',
+  plane: '<path d="M10.5 13.5 3 11l1.5-1.5 7.5.5 4-4.5c.8-.8 2.2-.8 2.5-.5.3.3.3 1.7-.5 2.5l-4.5 4 .5 7.5L12.5 21 10 13.5"/>',
+  bell: '<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15Z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/>',
+  shield: '<path d="M12 3 4.5 6v6c0 4.5 3.2 8 7.5 9 4.3-1 7.5-4.5 7.5-9V6Z"/><path d="M12 10v4M12 7.5v.01"/>',
+  lock: '<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2"/>',
+  card: '<rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/>',
+  help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.4 2.2-2.4 3.8M12 17v.01"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.01"/>',
+  trash: '<path d="M4 7h16M9 7V4.5h6V7M6 7l1 13h10l1-13M10 11v6M14 11v6"/>',
+  gauge: '<circle cx="12" cy="12" r="9"/><path d="m7 15 3-4 3 2.5L17 9"/>',
+  flag: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+  logout: '<path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4M10 16l-4-4 4-4M6 12h10"/>',
+  ticket: '<path d="M3 8a2 2 0 0 0 0 4v0a2 2 0 0 0 0 4v1.5a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V16a2 2 0 0 1 0-4 2 2 0 0 1 0-4V6.5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1Z"/><path d="M14 6v12" stroke-dasharray="2 2"/>',
+  translate: '<path d="M3 5h10M8 3v2M5.5 5c.8 3 3 5.5 6 7M10.5 5c-.8 3.5-3 6.5-6.5 8"/><path d="m12 21 4.5-10 4.5 10M13.5 17.5h6"/>',
+  swap: '<path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/>',
+  chevronR: '<path d="m9 6 6 6-6 6"/>',
+  wand: '<path d="m4 20 11-11M14 4l1.2 2.3L17.5 7.5l-2.3 1.2L14 11l-1.2-2.3L10.5 7.5l2.3-1.2ZM19 12l.7 1.3 1.3.7-1.3.7L19 16l-.7-1.3L17 14l1.3-.7Z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
+  camera: '<path d="M4 8h3l2-2.5h6L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.5"/>',
+  crown: '<path d="m3 8 4.5 4L12 5l4.5 7L21 8l-2 10H5Z"/>',
   pin: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>',
   locate: '<path d="m3 11 18-8-8 18-2-8Z"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -75,6 +95,29 @@ export const favBtn = (id) => {
   const on = favs.has(id);
   return `<button class="fav ${on ? 'is-on' : ''}" type="button" data-fav="${id}" aria-pressed="${on}" aria-label="${t(on ? 'fav.remove' : 'fav.add')}">${icon('heart')}</button>`;
 };
+
+// "Available Hotels" card from the app: wide photo, heart, name + star chip, DZD price, View details.
+export function hotelCard(s, { dist } = {}) {
+  return `
+  <article class="hotel-card" data-id="${s.id}">
+    <a class="hotel-card__media" href="lieu.html?id=${s.id}" tabindex="-1" aria-hidden="true">
+      ${imgTag(s.images[0], '', { sizes: '(max-width: 720px) 92vw, 380px' })}
+      ${s.eco ? `<span class="badge badge--eco">${icon('leaf')}${t('place.eco')}</span>` : ''}
+    </a>
+    ${favBtn(s.id).replace('class="fav', 'class="fav fav--round')}
+    <div class="hotel-card__body">
+      <div class="hotel-card__row">
+        <h3 class="hotel-card__title"><a href="lieu.html?id=${s.id}">${esc(loc(s.name))}</a></h3>
+        <span class="star-chip">${icon('star')} ${num(s.rating, { minimumFractionDigits: 1 })}</span>
+      </div>
+      <p class="hotel-card__meta">${esc(loc(STAY_TYPES[s.type]))} · ${esc(loc(CITIES[s.city].name))}${dist ? ` · ${dist}` : ''}</p>
+      <div class="hotel-card__foot">
+        <p class="hotel-card__price"><strong>${t('common.dzd') === 'DA' ? 'DZD' : t('common.dzd')} ${num(s.price)}</strong><span>${t('stays.night')}</span></p>
+        <a class="btn btn--blue btn--xs" href="lieu.html?id=${s.id}">${t('ex.details')}</a>
+      </div>
+    </div>
+  </article>`;
+}
 
 export function stayCard(s, { dist } = {}) {
   return `

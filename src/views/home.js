@@ -3,7 +3,7 @@ import { t, loc, getLang } from '../core/i18n.js';
 import { gsap, ScrollTrigger } from '../core/motion.js';
 import { reducedMotion, stayCard, imgTag } from '../core/ui.js';
 import { isoDay, addDays, num, esc, coord } from '../core/format.js';
-import { user } from '../core/store.js';
+import { user, store } from '../core/store.js';
 import { CITIES, STAYS } from '../data/places.js';
 
 const L = (fr, en, ar) => ({ fr, en, ar });
@@ -27,7 +27,7 @@ export function init(root) {
 
   // ── Hero sea (WebGL) ──
   const seaHost = root.querySelector('[data-sea]');
-  if (!reducedMotion() && window.WebGLRenderingContext) {
+  if (!reducedMotion() && window.WebGLRenderingContext && !store.get('dataSaver')) {
     import('../webgl/sea.js').then(({ mountSea }) => {
       if (!root.isConnected) return;
       const lmName = root.querySelector('[data-lm-name]'), lmMeta = root.querySelector('[data-lm-meta]');

@@ -2,6 +2,7 @@ import 'leaflet/dist/leaflet.css';
 import './styles/base.css';
 import './styles/layout.css';
 import './styles/pages.css';
+import './styles/app.css';
 
 import barba from '@barba/core';
 import { applyI18n, syncDocumentLang, onLangChange } from './core/i18n.js';
@@ -18,6 +19,7 @@ const VIEWS = {
   carte: () => import('./views/carte.js'),
   patrimoine: () => import('./views/patrimoine.js'),
   guide: () => import('./views/guide.js'),
+  experiences: () => import('./views/experiences.js'),
   voyages: () => import('./views/voyages.js'),
   compte: () => import('./views/compte.js'),
   pro: () => import('./views/pro.js'),

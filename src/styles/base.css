@@ -23,9 +23,11 @@
   --brand-gradient: linear-gradient(180deg, var(--lagune) 0%, var(--azur) 100%);
   --sea-gradient: linear-gradient(170deg, #12357f 0%, var(--azur) 45%, #1aa3b3 100%);
 
-  --f-display: 'Unbounded', 'Readex Pro', system-ui, sans-serif;
-  --f-body: 'Readex Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --f-label: 'Reem Kufi', 'Readex Pro', system-ui, sans-serif; /* Kufic geometry, Latin + Arabic */
+  /* Only two web fonts: Plus Jakarta Sans (titles, buttons) and Poppins (everything else).
+     Neither covers Arabic script, so Arabic text falls back to the device's system font. */
+  --f-display: 'Plus Jakarta Sans', system-ui, 'Segoe UI', Tahoma, sans-serif;
+  --f-body: 'Poppins', system-ui, 'Segoe UI', Tahoma, sans-serif;
+  --f-label: 'Poppins', system-ui, 'Segoe UI', Tahoma, sans-serif;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -102,13 +104,13 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
 }
 
 /* Typography */
-.display, h1, h2 { font-family: var(--f-display); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; }
+.display, h1, h2 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
 h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; }
+h3 { font-family: var(--f-display); font-size: var(--fs-h3); font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
 [dir='rtl'] .display, [dir='rtl'] h1, [dir='rtl'] h2 { font-family: var(--f-body); font-weight: 600; letter-spacing: 0; line-height: 1.2; }
 [dir='rtl'] h3 { letter-spacing: 0; }
-.mono { font-family: var(--f-label); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+.mono { font-family: var(--f-label); font-size: 0.74rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
 [dir='rtl'] .mono { text-transform: none; letter-spacing: 0; font-size: 0.9rem; }
 .mono.keep { font-family: var(--f-label); }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--azur); font-weight: 500; }
@@ -134,7 +136,7 @@ h3 { font-size: var(--fs-h3); font-weight: 600; letter-spacing: -0.01em; line-he
   --bg: var(--soleil); --fg: var(--abysse);
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0;
-  background: var(--bg); color: var(--fg); font-weight: 600; font-size: 0.95rem; text-decoration: none;
+  background: var(--bg); color: var(--fg); font-family: var(--f-display); font-weight: 700; font-size: 0.95rem; text-decoration: none;
   transition: transform 0.25s var(--ease-out), background-color 0.2s, box-shadow 0.25s;
   white-space: nowrap;
 }
@@ -249,7 +251,7 @@ input[type='range'] { width: 100%; accent-color: var(--azur); }
 .sheet.is-open .sheet__scrim { opacity: 1; }
 .sheet.is-open .sheet__panel { transform: none; }
 .sheet__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px 8px; }
-.sheet__title { font-family: var(--f-display); font-weight: 500; font-size: 1.35rem; letter-spacing: -0.02em; }
+.sheet__title { font-family: var(--f-display); font-weight: 700; font-size: 1.35rem; letter-spacing: -0.02em; }
 [dir='rtl'] .sheet__title { font-family: var(--f-body); font-weight: 600; }
 .sheet__body { padding: 8px 20px 24px; overflow-y: auto; overscroll-behavior: contain; }
 @media (min-width: 760px) {

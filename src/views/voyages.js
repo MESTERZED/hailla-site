@@ -1,7 +1,7 @@
 import { t, loc } from '../core/i18n.js';
 import { icon, imgTag, stayCard, confirmDialog, toast } from '../core/ui.js';
-import { bookings, favs } from '../core/store.js';
-import { money, date, isoDay, esc } from '../core/format.js';
+import { bookings, favs, store } from '../core/store.js';
+import { money, date, isoDay, esc, addDays } from '../core/format.js';
 import { icsFor } from '../core/booking.js';
 import { findPlace, CITIES, STAY_TYPES, POI_CATS } from '../data/places.js';
 
@@ -33,6 +33,19 @@ export function init(root) {
       </article>`;
   };
 
+  const planRow = (p) => `
+    <article class="trip trip--plan">
+      <div class="trip__body">
+        <p class="mono">${date(p.start)} → ${date(addDays(p.start, p.days))}</p>
+        <h2 class="trip__title">${t('pl.yourTrip', { c: esc(loc(CITIES[p.city].name)) })}</h2>
+        <ol class="plan-mini" role="list">${p.plan.map((d, i) => `<li><strong>${t('pl.dayN', { n: i + 1 })}</strong> ${esc(d.title)}</li>`).join('')}</ol>
+      </div>
+      <div class="trip__side"><div class="trip__actions">
+        <a class="btn btn--ghost btn--sm" href="lieu.html?id=${p.stay}">${icon('hotel')} ${t('pl.hotels')}</a>
+        <button class="btn btn--ghost btn--sm trip__cancel" type="button" data-plan-del="${p.id}">${icon('trash')}</button>
+      </div></div>
+    </article>`;
+
   const empty = (msg, cta = true) => `<div class="empty">${icon('trips')}<p>${msg}</p>${cta ? `<a class="btn" href="explorer.html">${t('trips.empty.cta')}</a>` : ''}</div>`;
 
   const render = () => {
@@ -43,6 +56,9 @@ export function init(root) {
     root.querySelector('[data-n="up"]').textContent = up.length || '';
     root.querySelector('[data-n="past"]').textContent = past.length || '';
     root.querySelector('[data-n="favs"]').textContent = fav.length || '';
+    const plans = store.get('plans', []);
+    root.querySelector('[data-n="plans"]').textContent = plans.length || '';
+    root.querySelector('[data-panel="plans"]').innerHTML = plans.length ? plans.map(planRow).join('') : `<div class="empty">${icon('wand')}<p>${t('trips.plans.empty')}</p><a class="btn" href="guide.html?tab=plan">${t('gt.plan')}</a></div>`;
     root.querySelector('[data-panel="up"]').innerHTML = up.length ? up.map(row).join('') : empty(t('trips.empty'));
     root.querySelector('[data-panel="past"]').innerHTML = past.length ? past.map(row).join('') : empty(t('trips.empty'), false);
     root.querySelector('[data-panel="favs"]').innerHTML = fav.length
@@ -79,9 +95,12 @@ export function init(root) {
     const ics = e.target.closest('[data-ics]');
     if (ics) { const b = bookings.all().find((x) => x.ref === ics.dataset.ics); if (b) icsFor(b, findPlace(b.placeId)); }
     if (e.target.closest('[data-fav]')) setTimeout(render, 0);
+    const del = e.target.closest('[data-plan-del]');
+    if (del) { store.update('plans', (l) => l.filter((x) => x.id !== del.dataset.planDel), []); render(); }
   });
 
   render();
-  if (location.hash === '#favoris') select(tabs[2]);
+  if (location.hash === '#favoris') select(tabs.find((b) => b.dataset.tab === 'favs'));
+  if (location.hash === '#plans') select(tabs.find((b) => b.dataset.tab === 'plans'));
 }
 

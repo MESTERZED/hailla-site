@@ -34,13 +34,14 @@ En développement, lancez `npm run serve` dans un second terminal : Vite relaie 
 | Page | Fichier | Fonctionnalité de l'app |
 |---|---|---|
 | Accueil | `index.html` | Recherche, « La traversée » Nord → Sud, recommandations |
-| Hébergements | `explorer.html` | Filtres budget / type / note / langues / Éco, tri, vue carte |
-| Fiche lieu | `lieu.html?id=…` | Aperçu, photos, avis, communauté, réservation |
+| Hébergements | `explorer.html` | Écrans « Available Hotels » + « Filter » + « Select Flight » : fourchette de prix, notes, onglets Tout / Vols / Hôtels |
+| Fiche lieu | `lieu.html?id=…` | Aperçu, photos, avis, communauté ; réservation en étapes (calendrier, détails, paiement démo, confirmation) |
 | Carte | `carte.html` | Catégories Café / Hôtel / Musée / Souvenirs…, géolocalisation |
 | Patrimoine | `patrimoine.html` | 7 sites UNESCO, récits audio, visite immersive |
-| Guide IA | `guide.html` | Chat, planificateur d'itinéraire, dictée vocale |
+| Guide IA | `guide.html` | Discussion, planificateur de voyage en 4 étapes, traducteur français/anglais ↔ darja |
+| Expériences | `experiences.html` | Guides locaux (profil, langues, avis, contact), expériences en vedette, événements à venir |
 | Mes voyages | `voyages.html` | Réservations, annulation, export calendrier, favoris |
-| Compte | `compte.html` | Connexion / inscription, préférences |
+| Compte | `compte.html` | Connexion / inscription ; profil et réglages façon app |
 | Prestataires | `pro.html` | Formules (gratuit, commission 10 %, Pro), inscription, tableau de bord |
 | À propos | `a-propos.html` | Mission, équipe, crédits photos |
 
@@ -51,4 +52,6 @@ En développement, lancez `npm run serve` dans un second terminal : Vite relaie 
 - Photos : Wikimedia Commons (licences libres) — crédits dans `a-propos.html#credits`.
 - Fonds de carte : OpenStreetMap. Pour un trafic de production, passer à un fournisseur de tuiles hébergé.
 - Stack : Vite, GSAP + ScrollTrigger, Locomotive Scroll v5 (Lenis), Barba.js, Three.js, Anime.js, Lottie, Leaflet.
+- Polices : Plus Jakarta Sans (titres, boutons) et Poppins (texte) uniquement. Aucune des deux ne couvre l'arabe : en version arabe, le texte utilise la police système de l'appareil.
+- Écrans hors accueil adaptés des maquettes Figma « HAILLA app travel » (jaune #FCB424, boutons bleus #006CE4 → #003C90).
 - Design : contrat dans `.design-forge/contract/current.md`.
